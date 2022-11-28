@@ -1,22 +1,13 @@
 
 import express from 'express'
 
-import { Client } from 'pg'
+import bodyParser from 'body-parser'
 
 const app = express()
 
-const connectionData = {
-    user: '',
-    host: '',
-    database: '',
-    password: 'mysecretpassword',
-    port: 5432,
-  }
+const port = 3000
 
-const client = new Client(connectionData)
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
-client.connect()
-
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+export default app
