@@ -1,19 +1,22 @@
-import { sequelize } from "../database/database";
+import { sequelize } from "../database/database.js";
 import Sequelize from "sequelize";
 
 
 export const Client = sequelize.define('clients',{
     id: {
-        type: Sequelize.DataTypes.UUIDV4,
+        type: Sequelize.DataTypes.UUID,
         primaryKey: true,
     },
-    firstName : {
+    first_name : {
         type: Sequelize.DataTypes.STRING,
     },
-    lastName : {
+    last_name : {
         type: Sequelize.DataTypes.STRING,
     },
     email : {
+        type: Sequelize.DataTypes.STRING,
+    },
+    phone : {
         type: Sequelize.DataTypes.STRING,
     },
 })

@@ -1,14 +1,17 @@
-import { sequelize } from "../database/database";
+import { sequelize } from "../database/database.js";
+import Sequelize from "sequelize";
 
 
-sequelize.define('services',{
+export const Services =  sequelize.define('services',{
     id: {
-        type: sequelize.DataTypes.UUIDV4,
+        type: Sequelize.DataTypes.UUID,
+        primaryKey: true,
     },
     name : {
-        type: sequelize.DataTypes.STRING, 
+        type: Sequelize.DataTypes.STRING, 
     },
     description : {
-        type: sequelize.DataTypes.STRING,
+        type: Sequelize.DataTypes.STRING,
     },
+
 })
